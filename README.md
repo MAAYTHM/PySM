@@ -34,9 +34,9 @@ python3 pysmscraper.py --install
 	    "Bearer Token": "<ADD HERE YOUR BEARER TOKEN>"
     }
     ```
-    > There are **2** way to authenticate to **Twitter API**. One is via using **Bearer Token** only  and Another is  via **Consumer key , Consumer Secret Key, Access Token & Access Secret Token**.
+> There are **2** way to authenticate to **Twitter API**. One is via using **Bearer Token** only  and Another is  via **Consumer key , Consumer Secret Key, Access Token & Access Secret Token**.
     
-    > Both have major difference in term of **Rate limits** on `Tweets Search` . **Bearer Token** having upper hand with *450 requests per 15 minutes*. [Details here](https://developer.twitter.com/en/docs/twitter-api/rate-limits)
+> Both have major difference in term of **Rate limits** on `Tweets Search` . **Bearer Token** having upper hand with *450 requests per 15 minutes*. [Details here](https://developer.twitter.com/en/docs/twitter-api/rate-limits)
 ---
 ### Get Bearer Token, How?
 Steps to get Bearer token *( Via **twitter** docs )* : -
