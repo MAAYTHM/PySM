@@ -96,6 +96,14 @@ python pysmscraper.py -k google
 python pysmscraper.py -k google -m 1000 -p -u --silent -o google_tweets.csv
 ```
 
+### NOTES
+- If you are using it on *linux* or *mac* and You receive **warnings** like this :- 
+```sh
+(process:2394): Gtk-WARNING **: 15:48:28.568: Theme parser error: gtk.css:4403:12-17: "shade" is not a valid color name.
+```
+then Ignore this, It's just because of **matplotlib colors**.
+
+
 ### TODO
     - Use many more social media platforms like twitter for the work
     - Use less request for uniq tweets
