@@ -919,7 +919,7 @@ Made by (😎):
         if not token and not token.isspace(): raise Exception
     
     except Exception as error:
-        error_display(desc = "Invalid Bearer Token", error = error)
+        error_display(desc = "Invalid Bearer Token\n\nWhat Can I do?\n[ tip-1 ] Make Sure 'config.json' is in 'resources' dir\n[ tip-2 ] Checkout Installaton Page of this tool - 'https://github.com/MAAYTHM/PySM'. ", error = error)
 
     try:
         
@@ -960,9 +960,15 @@ Made by (😎):
             pattern_stopwords = re.compile(r'\b(' + r'|'.join(stopwords_set) + r')\b\s*')
             word_lemmatizer = WordNetLemmatizer()
             pos_dict = {'A':wordnet.ADJ, 'S':wordnet.ADJ_SAT, 'R':wordnet.ADV, 'N':wordnet.NOUN, 'V':wordnet.VERB}
-            words_dict = list(json.load(open("resources\\words_dict.json")).keys())
-            WORDS = Counter(words_dict)
             pattern_punctuation = re.compile('[%s]' % re.escape(string.punctuation))
+
+            try:
+                words_dict = list(json.load(open("resources\\words_dict.json")).keys())
+            
+            except Exception as error:
+                error_display(desc = f"File not found!!\n\nWhat Can I do?\n[ tip-1 ] Make Sure 'words_dict.json' is in 'resources' dir\n[ tip-2 ] Checkout Installaton Page of this tool - 'https://github.com/MAAYTHM/PySM'. ", error=error)
+
+            WORDS = Counter(words_dict)
 
 
             ## Executing Main function
