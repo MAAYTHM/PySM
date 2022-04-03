@@ -95,12 +95,12 @@ python pysmscraper.py -k google
 ```sh
 python pysmscraper.py -k google -m 1000 -p -u --silent -o google_tweets.csv
 ```
-
-- Sample Video :-
+---
+### Sample Video :-
 
 https://user-images.githubusercontent.com/86392841/161448496-df7fa0ef-5af3-487c-b5c2-fb958485f8a4.mp4
 
-
+---
 ### NOTES
 - If you are using it on *linux* or *mac* and You receive **warnings** like this :- 
 ```sh
@@ -110,7 +110,7 @@ then Ignore this, It's just because of **matplotlib colors**.
 
 - `resources/words_dict.json` is from [dwyl repo](https://github.com/dwyl/english-words) .
 
-
+---
 ### TODO
     - Use many more social media platforms like twitter for the work
     - Use less request for uniq tweets
