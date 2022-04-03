@@ -915,11 +915,18 @@ Made by (😎):
     
     ## getting BEARER TOKEN
     try:
-        token = str(json.load(open("resources\\config.json", "r"))['Bearer Token'])
+
+        ## for windows
+        if os.name == 'nt':
+            token = str(json.load(open("resources\\config.json", "r"))['Bearer Token'])
+        
+        ## for linux
+        else: token = str(json.load(open("resources/config.json", "r"))['Bearer Token'])
+
         if not token and not token.isspace(): raise Exception
     
     except Exception as error:
-        error_display(desc = "Invalid Bearer Token\n\nWhat Can I do?\n[ tip-1 ] Make Sure 'config.json' is in 'resources' dir\n[ tip-2 ] Checkout Installaton Page of this tool - 'https://github.com/MAAYTHM/PySM'. ", error = error)
+        error_display(desc = "Invalid Bearer Token\n\nWhat Can I do?\n[ tip-1 ] Check Your Bearer Token once more.\n[ tip-2 ] Make Sure 'config.json' is in 'resources' dir.\n[ tip-3 ] Checkout Installaton Page of this tool - 'https://github.com/MAAYTHM/PySM'. ", error = error)
 
     try:
         
@@ -963,7 +970,12 @@ Made by (😎):
             pattern_punctuation = re.compile('[%s]' % re.escape(string.punctuation))
 
             try:
-                words_dict = list(json.load(open("resources\\words_dict.json")).keys())
+                ## for windows
+                if os.name == 'nt':
+                    words_dict = list(json.load(open("resources\\words_dict.json")).keys())
+                
+                ## for linux
+                else: words_dict = list(json.load(open("resources/words_dict.json")).keys())
             
             except Exception as error:
                 error_display(desc = f"File not found!!\n\nWhat Can I do?\n[ tip-1 ] Make Sure 'words_dict.json' is in 'resources' dir\n[ tip-2 ] Checkout Installaton Page of this tool - 'https://github.com/MAAYTHM/PySM'. ", error=error)
