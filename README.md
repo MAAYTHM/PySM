@@ -103,6 +103,8 @@ python pysmscraper.py -k google -m 1000 -p -u --silent -o google_tweets.csv
 ```
 then Ignore this, It's just because of **matplotlib colors**.
 
+- `resources/words_dict.json` is from [dwyl repo](https://github.com/dwyl/english-words) .
+
 
 ### TODO
     - Use many more social media platforms like twitter for the work
