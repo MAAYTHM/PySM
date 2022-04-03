@@ -26,8 +26,25 @@ OR
 ```sh
 python3 pysmscraper.py --install
 ```
+> Note :- "If you are using **pip** method to install modules, then also you have to run the second command to install necessary **nltk** libraries"
+- After installation of all necessary *modules* and *libraries*.
+    - Write your "**Bearer-Token**" in `/resources/config.json` . like : -
+    ```json
+    {
+	    "Bearer Token": "<ADD HERE YOUR BEARER TOKEN>"
+    }
+    ```
+    > There are **2** way to authenticate to **Twitter API**. One is via using **Bearer Token** only  and Another is  via **Consumer key , Consumer Secret Key, Access Token & Access Secret Token**.
+    
+    > Both have major difference in term of **Rate limits** on `Tweets Search` . **Bearer Token** having upper hand with *450 requests per 15 minutes*. [Details here](https://developer.twitter.com/en/docs/twitter-api/rate-limits)
+---
+### Get Bearer Token, How?
+Steps to get Bearer token *( Via **twitter** docs )* : -
+-   Approved Twitter developer account (if you don’t have one, you can  [apply for access](https://developer.twitter.com/en/apply-for-access)).
+    
+-   A Twitter  [developer App](https://developer.twitter.com/en/docs/apps). You can create a new developer App or access existing ones in the  [Projects & Apps section](https://developer.twitter.com/en/portal/projects-and-apps)  of your developer account.
 
-### Arguments
+### HELP MENU
 ```
 usage: pysmscraper.py [-h] [-k KEYWORD] [-m MAX RESULTS] [-t THREADS] [-p [OPTIONAL]] [-u [OPTIONAL]] [-o CSV FILE PATH] [-y [OPTIONAL]] [--silent [OPTIONAL]] [--install [REQUIRED ONCE]]
 
@@ -83,6 +100,5 @@ python pysmscraper.py -k google -m 1000 -p -u --silent -o google_tweets.csv
     - Use many more social media platforms like twitter for the work
     - Use less request for uniq tweets
     - Change name of Uniq mode as per characterstics
-
 
 
