@@ -46,7 +46,7 @@ Steps to get Bearer token *( Via **twitter** docs )* : -
 
 ### HELP MENU
 ```
-usage: pysmscraper.py [-h] [-k KEYWORD] [-m MAX RESULTS] [-t THREADS] [-p [OPTIONAL]] [-u [OPTIONAL]] [-o CSV FILE PATH] [-y [OPTIONAL]] [--silent [OPTIONAL]] [--install [REQUIRED ONCE]]
+usage: pysmscraper.py [-h] [-k KEYWORD] [-m MAX RESULTS] [-t THREADS] [-p [OPTIONAL]] [-f [OPTIONAL]] [-o CSV FILE PATH] [-y [OPTIONAL]] [--silent [OPTIONAL]] [--install [REQUIRED ONCE]]
 
 A Social media Scrapper tool for specifically Twitter to measure reponses of a particular keyword
 
@@ -57,16 +57,15 @@ options:
   -m MAX RESULTS, --maxresult MAX RESULTS
                         How many tweets, want to scan? (default - 10)
   -t THREADS, --threads THREADS
-                        Maximum Threads to allow, (default - auto, " but less_than 500")
+                        Maximum Threads to allow, (default - auto, "but less_than 100")
   -p [OPTIONAL], --progress [OPTIONAL]
                         Show progress of tweets fetching. (default - "FALSE")
-  -u [OPTIONAL], --unique [OPTIONAL]
-                        Need Unique Tweets? (It takes more time than normal) (default - "FALSE")
+  -f [OPTIONAL], --fast [OPTIONAL]
+                        Need Tweets Fast? (It takes less time than normal but not sure to gather demanded max_results) (default - "FALSE")
   -o CSV FILE PATH, --output CSV FILE PATH
                         File name to save results (.csv) (default - "scrapper_result.csv")
   -y [OPTIONAL], --yes [OPTIONAL]
                         If the program prompt for "yes"/"no", Then It will set "Yes" to each question (asked from the program) (default - FALSE)
-  
   --silent [OPTIONAL]   Not print anything, ONLY errors will display and saving will be done. (default - FALSE)
   
   --install [REQUIRED ONCE]
@@ -75,11 +74,10 @@ options:
 example: [ USE WITH PYTHON3 ]
     python pysmscraper.py -k "google"
     python pysmscraper.py --install
-    python pysmscraper.py -k "google" -m 1000 --silent -p -o google_tweets.csv
+    python pysmscraper.py -k "google" -m 1000 --silent -f -p -o google_tweets.csv
 
 Note:
-    * By default, (without '-u' flag) The tool run on fast pace mode. So cannt gurrantee If u will recv your desired number of result. But yes, half of the desired result will be recvd.
-    * "-u" flag will of the fast-pace mode. It will cost more number of requests.
+    * By default, The tool run on Normal pace mode. So High chance that you will recv your desired max_result tweets.
     * Dont Panic If Tweets gathering's Progress bar showing less numbers of tweets comparing from prev progress. It will repair itself.
 
 Made by (😎):
